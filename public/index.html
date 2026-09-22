@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Trading Bot — Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>🤖 AI Trading Bot <span class="badge" id="paper-badge">PAPER</span></h1>
+    <div class="controls">
+      <span id="symbol-label">—</span>
+      <button id="run-now-btn">Rodar agora</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="grid">
+      <div class="card" id="account-card">
+        <h2>Saldo da Conta</h2>
+        <div class="stat-row"><span>Cash</span><strong id="acc-cash">—</strong></div>
+        <div class="stat-row"><span>Patrimônio (Equity)</span><strong id="acc-equity">—</strong></div>
+        <div class="stat-row"><span>Poder de compra</span><strong id="acc-buying-power">—</strong></div>
+        <div class="stat-row"><span>Posição aberta</span><strong id="acc-position">—</strong></div>
+      </div>
+
+      <div class="card" id="sentiment-card">
+        <h2>Sentimento das Notícias</h2>
+        <div class="sentiment-score">
+          <span id="sentiment-label" class="pill neutral">neutral</span>
+          <span id="sentiment-value">0.000</span>
+        </div>
+        <div class="stat-row"><span>Última ação decidida</span><strong id="last-action">—</strong></div>
+        <div class="stat-row"><span>Última execução</span><strong id="last-run-time">—</strong></div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Notícias Recentes</h2>
+      <ul id="news-list" class="list"></ul>
+    </section>
+
+    <section class="card">
+      <h2>Status das Ordens</h2>
+      <table id="orders-table">
+        <thead>
+          <tr><th>Símbolo</th><th>Lado</th><th>Qtd</th><th>Tipo</th><th>Status</th><th>Criada em</th></tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </section>
+
+    <section class="card">
+      <h2>Logs do Bot</h2>
+      <ul id="logs-list" class="list mono"></ul>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
